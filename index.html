@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Club PRPCEM</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styling */
+    body {
+      background-color: #20232A;
+      color: #ffffff;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url('path/to/banner-image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+    .modal-dialog-video {
+      max-width: 80%;
+      margin: 1.75rem auto;
+    }
+    .social-card {
+      color: #333;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .social-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <img src="banner.jpg" alt="Coding Club Banner">
+  </div>
+
+  <!-- Video Modal (automatically opens) -->
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-video" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="videoModalLabel">Welcome to Coding Club PRPCEM</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" height="400px" src="intro.mp4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media Links Section -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Follow Us on Social Media</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <a href="https://facebook.com" class="social-card card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Whatsapp Group</h5>    
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://instagram.com" class="social-card card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Instagram</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="https://linkedin.com" class="social-card card text-center">
+          <div class="card-body">
+            <h5 class="card-title">LinkedIn</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer text-center py-3">
+    <p>&copy; 2024 Coding Club PRPCEM | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Automatically show the video modal when the page loads
+    $(document).ready(function() {
+      $('#videoModal').modal('show');
+    });
+  </script>
+</body>
+</html>
