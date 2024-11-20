@@ -6,17 +6,20 @@
   <title>Coding Club PRPCEM</title>
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
   <meta property="og:image" content="https://codingclubprpcem.github.io/preview.jpg">
-<meta property="og:title" content="Coding Club PRPCEM">  
+  <meta property="og:title" content="Coding Club PRPCEM">  
   <meta property="og:image" content="https://codingclubprpcem.github.io/banner.jpg">
+  <meta property="og:description" content="Join the social media handles of Coding Club PRPCEM">
 
-<meta property="og:description" content="Join the social media handles of Coding Club PRPCEM">
-
+  <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <style>
     /* Custom styling */
     body {
       background-color: #20232A;
       color: #ffffff;
+      font-family: Arial, sans-serif;
     }
     .banner {
       position: relative;
@@ -30,17 +33,37 @@
       width: 100%;
       height: auto;
     }
-    .modal-dialog-video {
-      max-width: 80%;
-      margin: 1.75rem auto;
-    }
     .social-card {
-      color: #333;
+      background-color: #ffffff;
+      color: #20232A;
       text-decoration: none;
-      transition: transform 0.2s;
+      font-weight: bold;
+      border: 2px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
     }
     .social-card:hover {
       transform: scale(1.05);
+      border-color: #007bff;
+    }
+    .social-card .card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .social-card h5 {
+      margin-top: 10px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      background-color: #101317;
     }
   </style>
 </head>
@@ -51,25 +74,44 @@
     <img src="banner.jpg" alt="Coding Club Banner">
   </div>
 
-  <!-- Video Modal (automatically opens) 
-  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-video" role="document">
+  <!-- Join Coding Club Button -->
+  <div class="container mt-5 text-center">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
+      <i class="fas fa-user-plus"></i> Join Coding Club
+    </button>
+  </div>
+
+  <!-- Form Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-form" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="videoModalLabel">Welcome to Coding Club PRPCEM</h5>
+          <h5 class="modal-title" id="formModalLabel">Join Coding Club PRPCEM</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <iframe width="100%" height="400px" src="intro.mp4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <form id="joinForm" action="mailto:coding_club@prpotepatilengg.ac.in" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="3" placeholder="Why do you want to join?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Submit</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 
-
--->
   <!-- Social Media Links Section -->
   <div class="container mt-5">
     <h2 class="text-center mb-4">Follow Us on Social Media</h2>
@@ -77,20 +119,23 @@
       <div class="col-md-4 mb-3">
         <a href="https://chat.whatsapp.com/El4P6t9tCVC7e1hRooKENB" class="social-card card text-center">
           <div class="card-body">
-            <h5 class="card-title">Whatsapp Group</h5>    
+            <i class="fab fa-whatsapp fa-3x"></i>
+            <h5 class="card-title">Whatsapp Group</h5>
           </div>
         </a>
       </div>
       <div class="col-md-4 mb-3">
         <a href="https://www.instagram.com/codingclub_prpcem/" class="social-card card text-center">
           <div class="card-body">
+            <i class="fab fa-instagram fa-3x"></i>
             <h5 class="card-title">Instagram</h5>
           </div>
         </a>
       </div>
       <div class="col-md-4 mb-3">
-        <a href="https://www.linkedin.com/company/coding-club-prpcem/?lipi=urn%3Ali%3Apage%3Amessaging_thread%3B48eefcc2-715f-4ce0-87cb-360b918b1a00" class="social-card card text-center">
+        <a href="https://www.linkedin.com/company/coding-club-prpcem/" class="social-card card text-center">
           <div class="card-body">
+            <i class="fab fa-linkedin fa-3x"></i>
             <h5 class="card-title">LinkedIn</h5>
           </div>
         </a>
@@ -98,14 +143,16 @@
       <div class="col-md-4 mb-3">
         <a href="https://www.youtube.com/@Coding_Club_PRPCEM" class="social-card card text-center">
           <div class="card-body">
+            <i class="fab fa-youtube fa-3x"></i>
             <h5 class="card-title">YouTube</h5>
           </div>
         </a>
-      </div>      
+      </div>
       <div class="col-md-4 mb-3">
         <a href="https://x.com/CodingClubPRPCE" class="social-card card text-center">
           <div class="card-body">
-            <h5 class="card-title">X (formerly known as Twitter)</h5>
+            <i class="fab fa-twitter fa-3x"></i>
+            <h5 class="card-title">X (Twitter)</h5>
           </div>
         </a>
       </div>
@@ -120,11 +167,5 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Automatically show the video modal when the page loads
-    $(document).ready(function() {
-      $('#videoModal').modal('show');
-    });
-  </script>
 </body>
 </html>
