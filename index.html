@@ -7,7 +7,6 @@
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
   <meta property="og:image" content="https://codingclubprpcem.github.io/banner.jpg">
   <meta property="og:title" content="Coding Club PRPCEM">  
-  <meta property="og:image" content="https://codingclubprpcem.github.io/banner.jpg">
   <meta property="og:description" content="Join the social media handles of Coding Club PRPCEM">
 
   <!-- Bootstrap CSS -->
@@ -24,8 +23,7 @@
     .banner {
       position: relative;
       width: 100%;
-      height: 400px;
-      background-image: url('path/to/banner-image.jpg');
+      height: auto;
       background-size: cover;
       background-position: center;
     }
@@ -65,6 +63,10 @@
     footer {
       background-color: #101317;
     }
+    iframe {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -82,9 +84,9 @@
 
     <!-- Teaser Video Section -->
     <div class="mt-4">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/c259gM2Gybo?si=GTG-Sfy5cAvXviOT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </iframe>
-    
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/c259gM2Gybo?si=GTG-Sfy5cAvXviOT" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
@@ -92,7 +94,7 @@
   <div class="container mt-5">
     <h2 class="text-center mb-4">Follow Us on Social Media</h2>
     <div class="row">
-      <div class="col-md-4 mb-3">
+      <div class="col-6 col-md-4 mb-3">
         <a href="https://chat.whatsapp.com/El4P6t9tCVC7e1hRooKENB" class="social-card card text-center">
           <div class="card-body">
             <i class="fab fa-whatsapp fa-3x"></i>
@@ -100,7 +102,7 @@
           </div>
         </a>
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-6 col-md-4 mb-3">
         <a href="https://www.instagram.com/codingclub_prpcem/" class="social-card card text-center">
           <div class="card-body">
             <i class="fab fa-instagram fa-3x"></i>
@@ -108,7 +110,7 @@
           </div>
         </a>
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-6 col-md-4 mb-3">
         <a href="https://www.linkedin.com/company/coding-club-prpcem/" class="social-card card text-center">
           <div class="card-body">
             <i class="fab fa-linkedin fa-3x"></i>
@@ -116,7 +118,7 @@
           </div>
         </a>
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-6 col-md-4 mb-3">
         <a href="https://www.youtube.com/@Coding_Club_PRPCEM" class="social-card card text-center">
           <div class="card-body">
             <i class="fab fa-youtube fa-3x"></i>
@@ -124,7 +126,7 @@
           </div>
         </a>
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-6 col-md-4 mb-3">
         <a href="https://x.com/CodingClubPRPCE" class="social-card card text-center">
           <div class="card-body">
             <i class="fab fa-twitter fa-3x"></i>
