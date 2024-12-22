@@ -140,6 +140,11 @@
     </div>
   </div>
 
+  <!-- View Count Section -->
+  <div class="container mt-5 text-center">
+    <h2>Page Views: <span id="viewCount">0</span></h2>
+  </div>
+
   <!-- Footer Section -->
   <footer class="footer text-center py-3">
     <p>&copy; 2024 Coding Club PRPCEM | All Rights Reserved</p>
@@ -148,5 +153,14 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // View count script
+    if (localStorage.page_view_count) {
+      localStorage.page_view_count = Number(localStorage.page_view_count) + 1;
+    } else {
+      localStorage.page_view_count = 1;
+    }
+    document.getElementById('viewCount').innerText = localStorage.page_view_count;
+  </script>
 </body>
 </html>
