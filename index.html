@@ -155,12 +155,24 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // View count script
-    if (localStorage.page_view_count) {
-      localStorage.page_view_count = Number(localStorage.page_view_count) + 1;
-    } else {
-      localStorage.page_view_count = 1;
-    }
-    document.getElementById('viewCount').innerText = localStorage.page_view_count;
+    const viewCountUrl = 'https://<your-github-username>.github.io/<your-repo-name>/viewCount.json';
+
+    fetch(viewCountUrl)
+      .then(response => response.json())
+      .then(data => {
+        const newCount = data.count + 1;
+        document.getElementById('viewCount').innerText = newCount;
+
+        // Update the view count on the server
+        fetch(viewCountUrl, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ count: newCount })
+        });
+      })
+      .catch(error => console.error('Error fetching view count:', error));
   </script>
 </body>
 </html>
