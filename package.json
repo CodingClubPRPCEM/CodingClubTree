@@ -1,0 +1,16 @@
+{
+  "name": "coding-club-tree",
+  "version": "1.0.0",
+  "description": "A modern linktree-style site for Coding Club PRPCEM",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/style.css",
+    "watch": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
+  },
+  "keywords": ["coding club", "prpcem", "linktree"],
+  "author": "Coding Club PRPCEM",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg-dark text-text-primary font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-5xl mx-auto px-4 md:px-6;
+  }
+  
+  /* Neural card style */
+  .neural-card {
+    @apply bg-bg-dark-tertiary/50 backdrop-blur-lg border border-tech-blue/20 rounded-xl p-4 md:p-6
+           transition-all duration-300 hover:shadow-neon-sm hover:-translate-y-1
+           relative overflow-hidden;
+  }
+  
+  /* Cyber card style */
+  .cyber-card {
+    @apply bg-bg-dark-secondary/50 backdrop-blur-md border-l-2 border-t-2 border-tech-purple/30
+           rounded-lg p-4 relative overflow-hidden
+           transition-all duration-300 hover:shadow-neon-purple-sm;
+  }
+  
+  /* Social card style */
+  .social-card {
+    @apply flex flex-col items-center justify-center p-4 md:p-5
+           bg-bg-dark-tertiary/60 backdrop-blur-md border border-white/10
+           rounded-xl transition-all duration-300 hover:scale-105
+           hover:shadow-neon-sm hover:border-tech-blue/40;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 
+           px-6 py-3 font-medium text-white rounded-lg
+           bg-tech-blue/90 hover:bg-tech-blue
+           transition-all duration-300 hover:shadow-neon-sm;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 
+           px-6 py-3 font-medium rounded-lg
+           bg-transparent border border-tech-purple/50 text-tech-purple
+           hover:bg-tech-purple/10 transition-all duration-300
+           hover:shadow-neon-purple-sm hover:border-tech-purple;
+  }
+
+  /* Glitch effect for slogan */
+  .glitch-text {
+    @apply relative inline-block;
+    text-shadow: 0.05em 0 0 rgba(244, 114, 182, 0.75),
+                -0.025em -0.05em 0 rgba(0, 212, 255, 0.75),
+                0.025em 0.05em 0 rgba(139, 92, 246, 0.75);
+    animation: glitch 2s infinite;
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    @apply font-bold text-transparent bg-clip-text;
+    background-image: linear-gradient(
+      to right,
+      #00d4ff,
+      #8b5cf6,
+      #f472b6,
+      #10b981,
+      #00d4ff
+    );
+    background-size: 200% auto;
+    animation: gradient-text 4s linear infinite;
+  }
+
+  /* Particle background */
+  .particle {
+    @apply absolute rounded-full opacity-0;
+    animation: float-particle 10s infinite linear;
+  }
+
+  /* Code rain effect */
+  .code-rain {
+    @apply fixed w-full h-full top-0 left-0 pointer-events-none z-0 opacity-30;
+    overflow: hidden;
+  }
+
+  .code-rain::before {
+    content: "";
+    @apply absolute top-0 left-0 w-full h-full;
+    background: linear-gradient(to bottom, transparent, #0f172a);
+    z-index: 1;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(244, 114, 182, 0.75),
+                -0.025em -0.05em 0 rgba(0, 212, 255, 0.75),
+                0.025em 0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(244, 114, 182, 0.75),
+                -0.025em -0.05em 0 rgba(0, 212, 255, 0.75),
+                0.025em 0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(244, 114, 182, 0.75),
+                0.025em 0.025em 0 rgba(0, 212, 255, 0.75),
+                -0.05em -0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(244, 114, 182, 0.75),
+                0.025em 0.025em 0 rgba(0, 212, 255, 0.75),
+                -0.05em -0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(244, 114, 182, 0.75),
+                0.05em 0 0 rgba(0, 212, 255, 0.75),
+                0 -0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(244, 114, 182, 0.75),
+                0.05em 0 0 rgba(0, 212, 255, 0.75),
+                0 -0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(244, 114, 182, 0.75),
+                -0.025em -0.025em 0 rgba(0, 212, 255, 0.75),
+                -0.025em -0.05em 0 rgba(139, 92, 246, 0.75);
+  }
+}
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-1000%) translateX(100px);
+    opacity: 0;
+  }
+}
